@@ -13,7 +13,7 @@
 
 typedef struct {
   nes_rom_t *rom;
-  
+
   unsigned char error;
   int interrupt;
 
@@ -28,9 +28,9 @@ typedef struct {
   const char *chr;
 
   unsigned char ppu_registers[8];
-} nes_cpu_state;
+} cpu_state_t;
 
-void nes_cpu_reset(nes_cpu_state *cpu);
-unsigned short nes_cpu_step(nes_cpu_state *cpu);
+void cpu_reset(cpu_state_t *cpu);
+int cpu_step(cpu_state_t *cpu);
 
 #endif
